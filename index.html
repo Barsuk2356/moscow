@@ -40,7 +40,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -132,7 +131,6 @@
             color: var(--gold);
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 80px;
             padding: 120px 0 150px;
@@ -180,7 +178,6 @@
             text-transform: uppercase;
         }
 
-        /* Advantages */
         .advantages {
             padding: 80px 0;
             background: var(--dark-blue);
@@ -241,7 +238,6 @@
             line-height: 1.8;
         }
 
-        /* Catalog */
         .catalog {
             padding: 80px 0;
             background: linear-gradient(to bottom, var(--dark-blue), #0d1d33);
@@ -333,7 +329,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Form Section */
         .form-section {
             padding: 100px 0;
             background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05), transparent);
@@ -431,7 +426,6 @@
             color: var(--gold);
         }
 
-        /* Footer */
         footer {
             background: #050d18;
             padding: 60px 0 30px;
@@ -470,7 +464,6 @@
             font-size: 14px;
         }
 
-        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -480,7 +473,6 @@
             cursor: pointer;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .header-contacts {
                 display: none;
@@ -526,7 +518,6 @@
             }
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -542,7 +533,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -563,7 +553,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -574,7 +563,6 @@
         </div>
     </section>
 
-    <!-- Advantages -->
     <section class="advantages">
         <div class="container">
             <h2 class="section-title">Наши преимущества</h2>
@@ -607,13 +595,11 @@
         </div>
     </section>
 
-    <!-- Catalog -->
     <section class="catalog">
         <div class="container">
             <h2 class="section-title">Актуальные предложения</h2>
             
             <div class="catalog-grid">
-                <!-- Card 1 -->
                 <div class="property-card">
                     <div class="property-image">
                         <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ЖК Символ">
@@ -636,7 +622,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="property-card">
                     <div class="property-image">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ЖК Лайнер">
@@ -659,7 +644,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="property-card">
                     <div class="property-image">
                         <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ЖК Первый Московский">
@@ -685,17 +669,16 @@
         </div>
     </section>
 
-    <!-- Application Form -->
     <section class="form-section" id="application-form">
         <div class="container">
             <div class="form-container">
                 <h2 class="form-title">Оставить заявку</h2>
                 <p class="form-subtitle">Перезвоним в течение 15 минут</p>
                 
-                <form action="https://formsubmit.co/fedotove438@gmail.com" method="POST" id="contactForm">
-                    <!-- ЗАГЛУШКА: замените ВАШ_EMAIL@example.com на реальный email -->
-                    
-                    <!-- Настройки FormSubmit -->
+                <!-- ФОРМА С ПРАВИЛЬНЫМ ВОЗВРАТОМ -->
+                <form action="https://formsubmit.co/fedotove438@gmail.com" method="POST">
+                    <!-- ВОЗВРАТ НА ТВОЙ САЙТ (не на пустую страницу) -->
+                    <input type="hidden" name="_next" value="https://barsuk2356.github.io/moscow/">
                     <input type="hidden" name="_subject" value="Новая заявка с сайта Moskow Estate">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -707,7 +690,7 @@
                     
                     <div class="form-group">
                         <label for="phone">Телефон</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[+]?[0-9\s\-\(\)]+">
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
                     </div>
                     
                     <button type="submit" class="btn-submit">Отправить заявку</button>
@@ -716,7 +699,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -756,24 +738,11 @@
     </footer>
 
     <script>
-        // Обработка отправки формы
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Показываем сообщение перед отправкой
-            setTimeout(function() {
-                alert('Спасибо! Менеджер свяжется с вами в ближайшее время.');
-            }, 100);
-            
-            // Форма отправится на указанный в action email через FormSubmit
-            // ВАЖНО: замените ВАШ_EMAIL@example.com в action формы на реальный email для получения заявок
-        });
-
-        // Маска для телефона (простая валидация)
         document.getElementById('phone').addEventListener('input', function(e) {
             let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
             e.target.value = !x[2] ? x[1] : '+' + x[1] + ' (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
         });
 
-        // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
